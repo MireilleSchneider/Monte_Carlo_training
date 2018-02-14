@@ -1,0 +1,18 @@
+bigwidth            1.e-4                   ! DURATION OF A BIG TIME STEP (S)
+simu_dt             0.001                   ! TIME TO SIMULATE (S)
+ntot                10000                   ! TOTAL NUMBER OF MONTE CARLO PARTICLES TO SIMULATE (-)
+energy              3.5e3                   ! ALPHA PARTICLE ENERGY (KEV)
+dt                  1.e-7                   ! INTERNAL TIME STEP FOR ORBIT INTEGRATION (SEC)
+------------------------------
+one_orbit           1                       ! FLAG TO FOLLOW ONLY ONE ORBIT (FOR DISPLAY PURPOSES)
+orbit_following     1                       ! FLAG TO FOLLOW ORBITS
+ano_transport       0                       ! FLAG TO SWITCH ON ANOMALOUS TRANSPORT
+forced_init         1                       ! FLAG TO FORCE THE INITIAL STATE OF THE PARTICLE
+------------------------------
+forced_pitch_init   0.                      ! FORCED INITIAL PITCH ANGLE (-)
+forced_rpa_init     6.5                     ! FORCED INITIAL R-POSITION (M)
+forced_zpa_init     -1.                     ! FORCED INITIAL Z-POSITION (M)   
+forced_engy_init    3.5e3                   ! FORCED INITIAL ENERGY (KEV)
+------------------------------
+diffusion           10.                     ! DIFFUSION COEFFICIENT FOR ANOMALOUS TRANSPORT (M^2/S)
+convection          10.                     ! CONVECTION VELOCITY FOR ANOMALOUS TRANSPORT (M/S)
