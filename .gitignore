@@ -1,0 +1,6 @@
+# Files and directories to exclude from Git repository
+*~
+*.[oa]
+*.mod
+*.exe
+
