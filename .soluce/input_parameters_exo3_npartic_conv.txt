@@ -14,5 +14,5 @@ forced_rpa_init     6.5                     ! FORCED INITIAL R-POSITION (M)
 forced_zpa_init     -1.                     ! FORCED INITIAL Z-POSITION (M)   
 forced_engy_init    3.5e3                   ! FORCED INITIAL ENERGY (KEV)
 ------------------------------
-diffusion           1.e5                    ! DIFFUSION COEFFICIENT FOR ANOMALOUS TRANSPORT (M^2/S)
-convection          0.e5                    ! CONVECTION VELOCITY FOR ANOMALOUS TRANSPORT (M/S)
+diffusion           0.e5                    ! DIFFUSION COEFFICIENT FOR ANOMALOUS TRANSPORT (M^2/S)
+convection          1.e5                    ! CONVECTION VELOCITY FOR ANOMALOUS TRANSPORT (M/S)

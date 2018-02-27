@@ -54,7 +54,8 @@ nbin = 100;
 %% IMPLEMENTATION HAS NOT BEEN DONE YET)
 sel = find(iescape==0);
 if length(sel) == 0
-  sel = find(iescape);
+  disp('No particle left => Abort.')
+  break
 end
 
 npart = size(sel);
