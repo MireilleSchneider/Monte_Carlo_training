@@ -25,7 +25,7 @@ module mod_collision
      double precision:: acoefe,bcoefe,dbvcoefe       ! TO ELECTRONS
      double precision:: acoefi,bcoefi,dbvcoefi       ! TO IONS
 
-     ! ACTUAL POWER TRABSFER TO ELECTRONS AND IONS
+     ! ACTUAL ENERGY TRANSFERRED TO ELECTRONS AND IONS (JOULES)
      double precision:: elde,ionde
 
   end type coll
