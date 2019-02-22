@@ -53,6 +53,9 @@ nbin = 100;
 %% UNLESS ALL PARTICLES ARE ESCAPED (MEANING THAT THE SOURCE
 %% IMPLEMENTATION HAS NOT BEEN DONE YET)
 sel = find(iescape==0);
+%if length(sel) == 0
+%  sel = find(iescape);
+%end
 if length(sel) == 0
   disp('No particle left => Abort.')
   break
