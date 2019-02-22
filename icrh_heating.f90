@@ -68,6 +68,7 @@ subroutine icrh_heating(scal,inp1d,inp2d,particle)
 
      if(scal%start.eq.1) then
         if(iharm.eq.1) then
+           write(*,*) 'Cyclotron ion frequency (MHz) = ',wcycl 
            write(*,*) '------------------'
            write(*,*) 'Harmonic R_res (m)'
         endif
