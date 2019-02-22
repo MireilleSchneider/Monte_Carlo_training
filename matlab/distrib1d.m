@@ -107,6 +107,7 @@ fweight='bold';
 
 %% PITCH ANGLE
 close all
+set(gcf,'Color',[1 1 1]);
 h=axes;
 set(h,'FontSize',fontsize,'fontweight',fweight)
 hold on ; grid on
@@ -123,6 +124,7 @@ print -depsc ../fig/xi_distrib.eps
 
 %% VELOCITY
 figure
+set(gcf,'Color',[1 1 1]);
 h=axes;
 set(h,'FontSize',fontsize,'fontweight',fweight)
 hold on ; grid on
@@ -139,6 +141,7 @@ print -depsc ../fig/v_distrib.eps
 
 %% ENERGY
 figure
+set(gcf,'Color',[1 1 1]);
 h=axes;
 set(h,'FontSize',fontsize,'fontweight',fweight)
 hold on ; grid on
@@ -155,6 +158,7 @@ print -depsc ../fig/e_distrib.eps
 
 %% R
 figure
+set(gcf,'Color',[1 1 1]);
 h=axes;
 set(h,'FontSize',fontsize,'fontweight',fweight)
 hold on ; grid on
@@ -172,6 +176,7 @@ print -depsc ../fig/r_distrib.eps
 
 %% Z
 figure
+set(gcf,'Color',[1 1 1]);
 h=axes;
 set(h,'FontSize',fontsize,'fontweight',fweight)
 hold on ; grid on

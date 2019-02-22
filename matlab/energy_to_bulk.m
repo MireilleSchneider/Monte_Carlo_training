@@ -45,6 +45,7 @@ disp('--------------------------------------------')
 
 %% DISPLAY FIGURES
 clf
+set(gcf,'Color',[1 1 1]);
 h=axes;
 set(h,'FontSize',fontsize,'fontweight',fweight)
 hold on ; grid on
