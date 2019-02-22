@@ -1,13 +1,18 @@
-load ../input/iter.mat
+%load ../input/iter.mat
+
+load ../input/te.txt
+load ../input/ti.txt
+load ../input/ntot.txt
+load ../input/ni.txt
+load ../input/ne.txt
+load ..//input/rho_in.txt
+load ../input/a_ions.txt
+load ../input/z_ions.txt
 
 a_ion = 4;
 z_ion = 2;
 
-%% ELECTRON DENSITY AND TEMPERATURE
-ne = sum(ntot,2);
-te = ti;
-ti = ti*1e3;
-te = te*1e3;
+%% ELECTRON DENSITY AND TEMPERATURE IN M-3 AND KEV
 
 %% ANALYTIC SLOWING-DOWN TIME
 nrho = length(te);
@@ -22,22 +27,40 @@ logl  = (logle+logli)*0.5;
 tslow_ana = 6.27e8*a_ion*(te.^1.5)./(ne*1e-6*z_ion^2.*logl);  % SLOWING-DOWN TIME
 
 %% ANALYTICAL CRITICAL VELOCITY
-zi = compo.z; % Z OF ALL SPECIES
-ai = compo.a; % A OF ALL SPECIES
-nimp = length(compo.a);
+zi = z_ions; % Z OF ALL SPECIES
+ai = a_ions; % A OF ALL SPECIES
+nimp = length(zi);
 
 %% ZBAR
-zbar = zeros(nrho,1);
+zbar = zeros(1,nrho);
 for i=1:nimp
-  zbar = zbar + ntot(i)*zi(i).^2/ai(i);
+  ik = (i-1)*101+1;
+  zbar = zbar + ntot(ik)*zi(i).^2/ai(i);
 end
 zbar = zbar./ne;
 
 %% CRITICAL ENERGY AND VELOCITY
-ecri = 14.8 .* te*1.e-3 .* a_ion .*zbar.^(2./3.);     % CRITICAL ENERGY (KEV)
+ecri = 14.8 .* te .* a_ion .*zbar.^(2./3.);  % CRITICAL ENERGY (KEV)
 vcri = sqrt(2000*1.6e-19*ecri/(a_ion*1.6726e-27)); % CRITICAL VELOCITY (M/S)
 
 %% CORRECTION OF VCRI DUE TO NON-CONSTANT COULOMB LOGARITHM
 vcri = vcri.*(logli./logle).^(1./3.);
 ecri(end) = 0.;
 vcri(end) = 0.;
+
+%% DISPLAY FIGURE
+fontsize = 20;
+fweight = 'bold';
+linewidth=3;
+clf
+h=axes;
+set(h,'FontSize',fontsize,'fontweight',fweight)
+hold on ; grid on
+plot(rho_in./rho_in(end),ecri,'linewidth',linewidth,'color','b')
+xlabel('Normalized toroidal flux coordinate (-)')
+ylabel('Critical energy (keV)')
+hold off
+print -dpng ../fig/critical_energy.png
+print -depsc ../fig/critical_energy.eps
+
+
