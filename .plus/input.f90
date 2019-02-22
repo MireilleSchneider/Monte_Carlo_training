@@ -122,7 +122,7 @@ subroutine input(scal,inp1d,inp2d,out1d,error_flag)
   endif
 
   if(scal%nacc.lt.1.or.scal%nacc.gt.100) then
-     write(*,*) 'NACC SHOUMD BE BETWEEN 1 AND 100'
+     write(*,*) 'NACC SHOULD BE BETWEEN 1 AND 100'
      write(*,*) '=> PROGRAM STOPPED.'
      error_flag = -1
      return
