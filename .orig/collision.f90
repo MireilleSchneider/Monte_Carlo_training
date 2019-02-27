@@ -45,7 +45,7 @@ subroutine collision(scal,inp1d,inp2d,bigstep,particle,out1d)
   rhonorm = rho/inp1d%rho_in(scal%nin1d)
   ai = scal%a_ions
   zi = scal%z_ions
-  dt = scal%dt
+  dt = scal%nacc * scal%dt
   call interp1d(0.d0,1.d0,inp1d%te,scal%nin1d,rhonorm,te,idum) ! TE
   call interp1d(0.d0,1.d0,inp1d%ti,scal%nin1d,rhonorm,ti,idum) ! TI
   call interp1d(0.d0,1.d0,inp1d%ne,scal%nin1d,rhonorm,ne,idum) ! NE
